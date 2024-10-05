@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         textField.clearButtonMode = .whileEditing
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1
-        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
         textField.leftViewMode = .always
         return textField
     }()
@@ -41,6 +40,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .red
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 20
         return button
     }()
     
@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .tintColor
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(toggleButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 20
         return button
     }()
     
