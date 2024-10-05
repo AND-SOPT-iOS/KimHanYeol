@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 32)
+        label.textColor = .brown
         return label
     }()
     
