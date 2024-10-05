@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         return button
     }()
     
-    //전환버튼
+    // 전환버튼
     private lazy var pushModeToggleButton: UIButton = {
         let button = UIButton()
         button.setTitle("전환 모드 변경", for: .normal)
@@ -56,8 +56,20 @@ class ViewController: UIViewController {
         return button
     }()
     
-    private var pushMode = true
     
+    // 배경 다크모드 전환버튼
+    private lazy var darkModeButton: UIButton = {
+        let button = UIButton()
+        
+        button.setTitle("다크모드", for: .normal)
+        button.backgroundColor = .black
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(darkModeButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 20
+        
+        return button
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -75,6 +87,7 @@ class ViewController: UIViewController {
             titleLabel,
             titleTextField,
             contentTextView,
+            darkModeButton,
             nextButton,
             pushModeToggleButton
         ].forEach {
@@ -82,6 +95,7 @@ class ViewController: UIViewController {
             self.view.addSubview($0)
         }
     }
+    
     
     private func setLayout() {
         NSLayoutConstraint.activate(
@@ -127,6 +141,10 @@ class ViewController: UIViewController {
                 ),
                 
                 
+                darkModeButton.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
+                darkModeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                darkModeButton.heightAnchor.constraint(equalToConstant: 44),
+                darkModeButton.widthAnchor.constraint(equalToConstant: 300),
                 
                 
                 nextButton.bottomAnchor.constraint(
@@ -154,6 +172,12 @@ class ViewController: UIViewController {
     
     private func updateUI() {
         self.titleLabel.text = pushMode ? "네비게이션" : "모달"
+        self.titleTextField.textColor = darkMode ? .white : .black
+        self.view.backgroundColor = darkMode ? .black : .white
+        self.darkModeButton.setTitle(darkMode ? "라이트모드" : "다크모드", for: .normal)
+        self.darkModeButton.backgroundColor = darkMode ? .white : .black
+        self.darkModeButton.setTitleColor(darkMode ? .black : .white, for: .normal)
+        
     }
     
     @objc func nextButtonTapped() {
@@ -186,8 +210,18 @@ class ViewController: UIViewController {
         }
     }
     
+    private var pushMode = true
+    
+    private var darkMode = false
+    
     @objc func toggleButtonTapped() {
         self.pushMode.toggle()
         self.updateUI()
     }
+    
+    @objc func darkModeButtonTapped() {
+        self.darkMode.toggle()
+        self.updateUI()
+    }
+
 }
