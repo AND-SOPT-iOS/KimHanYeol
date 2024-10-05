@@ -69,6 +69,19 @@ class ViewController: UIViewController {
         
         return button
     }()
+    
+    
+    // 이미지
+    private var imageView: UIImageView = {
+        let image = UIImageView()
+        image.backgroundColor = .red
+        image.image = UIImage(named: "MainImage")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
+    
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +100,9 @@ class ViewController: UIViewController {
             titleLabel,
             titleTextField,
             contentTextView,
+            
+            imageView,
+            
             darkModeButton,
             nextButton,
             pushModeToggleButton
@@ -138,6 +154,20 @@ class ViewController: UIViewController {
                 ),
                 contentTextView.heightAnchor.constraint(
                     equalToConstant: 200
+                ),
+                
+                
+                imageView.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: 20),
+                imageView.leadingAnchor.constraint(
+                    equalTo: view.leadingAnchor,
+                    constant: 20
+                ),
+                imageView.trailingAnchor.constraint(
+                    equalTo: view.trailingAnchor,
+                    constant: -20
+                ),
+                imageView.heightAnchor.constraint(
+                    equalToConstant: 150
                 ),
                 
                 
