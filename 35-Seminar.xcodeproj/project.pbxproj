@@ -44,7 +44,6 @@
 		6C2BE8702CBD3FC500428D4D /* Week1 */ = {
 			isa = PBXGroup;
 			children = (
-				6CFA97D32CB1017F004B6A40 /* ViewController.swift */,
 				6C391A3D2CBA5A7B000B72BD /* NicknameViewController_Delegate.swift */,
 			);
 			path = Week1;
@@ -78,6 +77,7 @@
 		6CFA97CE2CB1017F004B6A40 /* 35-Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				6CFA97D32CB1017F004B6A40 /* ViewController.swift */,
 				6C391A3B2CBA5983000B72BD /* TossView.swift */,
 				6CFA97D82CB10180004B6A40 /* Assets.xcassets */,
 				6CFA97DA2CB10180004B6A40 /* LaunchScreen.storyboard */,
