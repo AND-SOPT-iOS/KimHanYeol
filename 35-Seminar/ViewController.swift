@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     // 다음버튼
     private lazy var nextButton: UIButton = {
@@ -45,8 +44,6 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK: - test3
-
     
     // UI 배치
     private func setLayout() {
@@ -64,8 +61,6 @@ class ViewController: UIViewController {
             ]
         )
     }
-    
-    
 
     
     // 다음 버튼 누르면 실행
@@ -79,8 +74,4 @@ class ViewController: UIViewController {
     
 
     
-}
-
-#Preview {
-    ViewController()
 }
