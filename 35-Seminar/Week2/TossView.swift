@@ -16,25 +16,18 @@ class TossView: UIViewController {
     }
 
     private var scrollView = UIScrollView()
-    
     private var contentView = UIView()
-    
     private var headerView = HeaderView()
-    
     private var infoView = UIView()
-        
     private var firstInfoView = FirstInfoView()
-    
     private var secondInfoView = SecondInfoView()
+    private var thirdInfoView = ThirdInfoView()
     
     private func setUI() {
         self.view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(headerView)
-    
-        contentView.addSubview(infoView)
-        infoView.addSubview(firstInfoView)
-        infoView.addSubview(secondInfoView)
+        [headerView, infoView].forEach { contentView.addSubview($0) }
+        [firstInfoView, secondInfoView, thirdInfoView].forEach { infoView.addSubview($0) }
         
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -75,6 +68,14 @@ class TossView: UIViewController {
             $0.height.equalTo(100)
             $0.width.equalTo(120)
         }
+        
+        thirdInfoView.snp.makeConstraints {
+            $0.leading.equalTo(secondInfoView.snp.trailing)
+            $0.top.equalTo(infoView)
+            $0.height.equalTo(100)
+            $0.width.equalTo(120)
+        }
+        
         
         
     }
