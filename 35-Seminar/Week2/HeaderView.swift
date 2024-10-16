@@ -68,12 +68,7 @@ class HeaderView: UIView {
     }()
     
     private func setUI() {
-        self.addSubview(tossImageView)
-        self.addSubview(tossTitleLabel)
-        self.addSubview(tossDescriptionLabel)
-        self.addSubview(openButton)
-        self.addSubview(shareButton)
-        self.addSubview(divider)
+        [tossImageView, tossTitleLabel, tossDescriptionLabel, openButton, shareButton, divider].forEach { self.addSubview($0) }
         
         tossImageView.snp.makeConstraints {
             $0.leading.equalToSuperview()
