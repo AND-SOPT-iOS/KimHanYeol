@@ -9,20 +9,20 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
-        return label
-    }()
     
-    private let contentLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        return label
+    // 텍스트필드
+    private let titleTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "텍스트를 넘겨주세요"
+        textField.clearButtonMode = .whileEditing
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1
+        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
+        textField.leftViewMode = .always
+        return textField
     }()
-    
+
+    // 뒤로 가기 버튼
     private lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle("이전 화면으로", for: .normal)
@@ -31,9 +31,7 @@ class DetailViewController: UIViewController {
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return button
     }()
-    
-    private var receivedTitle: String?
-    private var receivedContent: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,60 +40,42 @@ class DetailViewController: UIViewController {
         setLayout()
     }
     
+    
     private func setStyle() {
         self.view.backgroundColor = .white
     }
     
     private func setUI() {
-        [titleLabel, contentLabel, backButton].forEach {
+        [titleTextField, backButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
     }
     
+    // UI 배치
     private func setLayout() {
         NSLayoutConstraint.activate(
             [
-                titleLabel.topAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 20
-                ),
-                titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                contentLabel.topAnchor.constraint(
-                    equalTo: titleLabel.bottomAnchor,
-                    constant: 20
-                ),
-                contentLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 backButton.topAnchor.constraint(
-                    equalTo: contentLabel.bottomAnchor,
+                    equalTo: view.safeAreaLayoutGuide.topAnchor,
                     constant: 20
                 ),
                 backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 backButton.heightAnchor.constraint(equalToConstant: 44),
                 backButton.widthAnchor.constraint(equalToConstant: 300),
+                
+                titleTextField.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 20),
+                titleTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                titleTextField.heightAnchor.constraint(equalToConstant: 44),
+                titleTextField.widthAnchor.constraint(equalToConstant: 300),
+                
             ]
         )
     }
     
-    func updateUI() {
-        self.titleLabel.text = receivedTitle
-        self.contentLabel.text = receivedContent
-    }
-    
-    func dataBind(
-        title: String,
-        content: String
-    ) {
-        self.receivedTitle = title
-        self.receivedContent = content
-        updateUI()
-    }
-    
     @objc func backButtonTapped() {
-        if self.navigationController == nil {
-            self.dismiss(animated: true)
-        } else {
-            self.navigationController?.popViewController(animated: true)
-        }
+
     }
+    
+    
 }
