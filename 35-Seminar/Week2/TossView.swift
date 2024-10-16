@@ -14,7 +14,7 @@ class TossView: UIViewController {
         super.viewDidLoad()
         setUI()
     }
-
+    
     private var scrollView = UIScrollView()
     private var contentView = UIView()
     private var headerView = HeaderView()
@@ -23,12 +23,13 @@ class TossView: UIViewController {
     private var secondInfoView = SecondInfoView()
     private var thirdInfoView = ThirdInfoView()
     private var newIssueView = NewIssueView()
-    
+    private var previewView = PreviewView()
     
     private func setUI() {
         self.view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        [headerView, infoView, newIssueView].forEach { contentView.addSubview($0) }
+        
+        [headerView, infoView, newIssueView, previewView].forEach { contentView.addSubview($0) }
         [firstInfoView, secondInfoView, thirdInfoView].forEach { infoView.addSubview($0) }
         
         scrollView.snp.makeConstraints {
@@ -38,9 +39,8 @@ class TossView: UIViewController {
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView)
             $0.width.equalTo(scrollView)
-            
-            // contentView의 height가 scrollView의 height보다 크거나 같도록 설정
-            $0.height.greaterThanOrEqualToSuperview().priority(.low)
+            // 스크롤이 가능하도록 contentView의 height를 정확히 설정
+            $0.height.equalToSuperview().priority(.low)
         }
         
         headerView.snp.makeConstraints {
@@ -81,13 +81,21 @@ class TossView: UIViewController {
         newIssueView.snp.makeConstraints {
             $0.leading.equalTo(infoView)
             $0.trailing.equalTo(infoView)
-            $0.top.equalTo(infoView.snp.bottom)
+            $0.top.equalTo(infoView.snp.bottom).offset(10)
             $0.height.equalTo(150)
         }
         
-        
-        
+        previewView.snp.makeConstraints {
+            $0.leading.equalTo(newIssueView)
+            $0.trailing.equalTo(newIssueView)
+            $0.top.equalTo(newIssueView.snp.bottom)
+            $0.width.equalTo(headerView)
+            
+            // 중요: contentView의 끝에 맞춰 설정
+            // 이거 안 하니까 자꾸 스크롤이 끝까지 안되고 다시 위로 튕김
+            $0.bottom.equalTo(contentView.snp.bottom).inset(20)
+            $0.height.equalTo(700)
+        }
         
     }
-    
 }
