@@ -130,11 +130,10 @@ class TossView: UIViewController {
         
         secondReviewView.snp.makeConstraints {
             $0.leading.equalTo(firstReviewView)
-            $0.top.equalTo(firstReviewView.snp.bottom)
+            $0.top.equalTo(firstReviewView.snp.bottom).offset(20)
             $0.bottom.equalTo(reviewView.snp.bottom)
             $0.width.equalTo(headerView)
         }
-        
         
     }
 }

@@ -53,7 +53,7 @@ class FirstInfoView: UIView {
             let star = UIImageView()
             star.image = UIImage(systemName: "star.fill")
             star.tintColor = .gray
-            star.snp.makeConstraints { $0.size.equalTo(16) } // 크기를 16으로 설정
+            star.snp.makeConstraints { $0.size.equalTo(16) }
             view.addArrangedSubview(star)
         }
         
@@ -61,7 +61,7 @@ class FirstInfoView: UIView {
         let halfStar = UIImageView()
         halfStar.image = UIImage(systemName: "star.leadinghalf.filled")
         halfStar.tintColor = .gray
-        halfStar.snp.makeConstraints { $0.size.equalTo(16) } // 크기를 16으로 설정
+        halfStar.snp.makeConstraints { $0.size.equalTo(16) }
         view.addArrangedSubview(halfStar)
         
         return view
