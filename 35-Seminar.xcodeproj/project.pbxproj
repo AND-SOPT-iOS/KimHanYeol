@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C2536F62CC00019009426E2 /* ExtraReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2536F52CC00019009426E2 /* ExtraReviewViewController.swift */; };
+		6C2536F82CC0060B009426E2 /* VersionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2536F72CC0060B009426E2 /* VersionRecordView.swift */; };
 		6C391A3A2CBA46CB000B72BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6C391A392CBA46CB000B72BD /* SnapKit */; };
 		6C391A3C2CBA5983000B72BD /* TossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C391A3B2CBA5983000B72BD /* TossView.swift */; };
 		6C391A3E2CBA5A7B000B72BD /* NicknameViewController_Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C391A3D2CBA5A7B000B72BD /* NicknameViewController_Delegate.swift */; };
@@ -17,6 +19,8 @@
 		6CCF9BFC2CBF92370089DFB5 /* NewIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF9BFB2CBF92370089DFB5 /* NewIssueView.swift */; };
 		6CCF9BFE2CBF9D460089DFB5 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF9BFD2CBF9D460089DFB5 /* PreviewView.swift */; };
 		6CCF9C002CBFAB860089DFB5 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF9BFF2CBFAB860089DFB5 /* DeveloperView.swift */; };
+		6CCF9C032CBFB7120089DFB5 /* FirstReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF9C022CBFB7120089DFB5 /* FirstReviewView.swift */; };
+		6CCF9C052CBFB71A0089DFB5 /* SecondReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF9C042CBFB71A0089DFB5 /* SecondReviewView.swift */; };
 		6CFA97D02CB1017F004B6A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA97CF2CB1017F004B6A40 /* AppDelegate.swift */; };
 		6CFA97D22CB1017F004B6A40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA97D12CB1017F004B6A40 /* SceneDelegate.swift */; };
 		6CFA97D42CB1017F004B6A40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA97D32CB1017F004B6A40 /* ViewController.swift */; };
@@ -25,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C2536F52CC00019009426E2 /* ExtraReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraReviewViewController.swift; sourceTree = "<group>"; };
+		6C2536F72CC0060B009426E2 /* VersionRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRecordView.swift; sourceTree = "<group>"; };
 		6C391A3B2CBA5983000B72BD /* TossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossView.swift; sourceTree = "<group>"; };
 		6C391A3D2CBA5A7B000B72BD /* NicknameViewController_Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController_Delegate.swift; sourceTree = "<group>"; };
 		6CCF9BF12CBE7F420089DFB5 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		6CCF9BFB2CBF92370089DFB5 /* NewIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIssueView.swift; sourceTree = "<group>"; };
 		6CCF9BFD2CBF9D460089DFB5 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		6CCF9BFF2CBFAB860089DFB5 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
+		6CCF9C022CBFB7120089DFB5 /* FirstReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstReviewView.swift; sourceTree = "<group>"; };
+		6CCF9C042CBFB71A0089DFB5 /* SecondReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondReviewView.swift; sourceTree = "<group>"; };
 		6CFA97CC2CB1017F004B6A40 /* 35-Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "35-Seminar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFA97CF2CB1017F004B6A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CFA97D12CB1017F004B6A40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,12 +83,14 @@
 		6CCF9BF02CBE7F070089DFB5 /* Week2 */ = {
 			isa = PBXGroup;
 			children = (
+				6CCF9C012CBFB7000089DFB5 /* ReviewView */,
 				6CCF9BF32CBECB990089DFB5 /* InfoView */,
 				6C391A3B2CBA5983000B72BD /* TossView.swift */,
 				6CCF9BF12CBE7F420089DFB5 /* HeaderView.swift */,
 				6CCF9BFB2CBF92370089DFB5 /* NewIssueView.swift */,
 				6CCF9BFD2CBF9D460089DFB5 /* PreviewView.swift */,
 				6CCF9BFF2CBFAB860089DFB5 /* DeveloperView.swift */,
+				6C2536F72CC0060B009426E2 /* VersionRecordView.swift */,
 			);
 			path = Week2;
 			sourceTree = "<group>";
@@ -93,6 +103,16 @@
 				6CCF9BF92CBED4E00089DFB5 /* ThirdInfoView.swift */,
 			);
 			path = InfoView;
+			sourceTree = "<group>";
+		};
+		6CCF9C012CBFB7000089DFB5 /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				6CCF9C022CBFB7120089DFB5 /* FirstReviewView.swift */,
+				6CCF9C042CBFB71A0089DFB5 /* SecondReviewView.swift */,
+				6C2536F52CC00019009426E2 /* ExtraReviewViewController.swift */,
+			);
+			path = ReviewView;
 			sourceTree = "<group>";
 		};
 		6CFA97C32CB1017F004B6A40 = {
@@ -202,12 +222,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCF9BF62CBECBFD0089DFB5 /* FirstInfoView.swift in Sources */,
+				6C2536F62CC00019009426E2 /* ExtraReviewViewController.swift in Sources */,
+				6C2536F82CC0060B009426E2 /* VersionRecordView.swift in Sources */,
 				6CFA97D42CB1017F004B6A40 /* ViewController.swift in Sources */,
 				6CCF9BFA2CBED4E00089DFB5 /* ThirdInfoView.swift in Sources */,
 				6CCF9C002CBFAB860089DFB5 /* DeveloperView.swift in Sources */,
 				6CCF9BFE2CBF9D460089DFB5 /* PreviewView.swift in Sources */,
 				6CCF9BF82CBECF910089DFB5 /* SecondInfoView.swift in Sources */,
+				6CCF9C052CBFB71A0089DFB5 /* SecondReviewView.swift in Sources */,
 				6CCF9BF22CBE7F420089DFB5 /* HeaderView.swift in Sources */,
+				6CCF9C032CBFB7120089DFB5 /* FirstReviewView.swift in Sources */,
 				6C391A3E2CBA5A7B000B72BD /* NicknameViewController_Delegate.swift in Sources */,
 				6CFA97D02CB1017F004B6A40 /* AppDelegate.swift in Sources */,
 				6CCF9BFC2CBF92370089DFB5 /* NewIssueView.swift in Sources */,

@@ -51,6 +51,7 @@ class NewIssueView: UIView {
         let button = UIButton()
         button.setTitle("버전 기록", for: .normal)
         button.setTitleColor(.tintColor, for: .normal)
+        button.addTarget(self, action: #selector(versionButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -105,6 +106,25 @@ class NewIssueView: UIView {
             $0.width.equalToSuperview()
         }
         
+    }
+    
+    // 현재 뷰가 속한 뷰컨트롤러에 접근하기 위한 확장 메서드
+    // gpt의 힘으로 작성한 코드.. 이해가 되지 않는다..
+     func viewController() -> UIViewController? {
+         var nextResponder: UIResponder? = self
+         while let responder = nextResponder {
+             if let vc = responder as? UIViewController {
+                 return vc
+             }
+             nextResponder = responder.next
+         }
+         return nil
+     }
+    
+    @objc private func versionButtonTapped() {
+        guard let viewController = viewController() else { return }
+        let nextViewController = VersionRecordView()
+        viewController.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }

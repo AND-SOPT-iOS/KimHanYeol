@@ -18,20 +18,29 @@ class TossView: UIViewController {
     private var scrollView = UIScrollView()
     private var contentView = UIView()
     private var headerView = HeaderView()
+    
     private var infoView = UIView()
     private var firstInfoView = FirstInfoView()
     private var secondInfoView = SecondInfoView()
     private var thirdInfoView = ThirdInfoView()
+    
     private var newIssueView = NewIssueView()
     private var previewView = PreviewView()
     private var developerView = DeveloperView()
+    
+    private var reviewView = UIView()
+    private var firstReviewView = FirstReviewView()
+    private var secondReviewView = SecondReviewView()
+    
     
     private func setUI() {
         self.view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        [headerView, infoView, newIssueView, previewView, developerView].forEach { contentView.addSubview($0) }
+        [headerView, infoView, newIssueView, previewView, developerView, reviewView].forEach { contentView.addSubview($0) }
         [firstInfoView, secondInfoView, thirdInfoView].forEach { infoView.addSubview($0) }
+        [firstReviewView, secondReviewView].forEach { reviewView.addSubview($0) }
+        
         
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -99,11 +108,32 @@ class TossView: UIViewController {
             $0.trailing.equalTo(previewView)
             $0.top.equalTo(previewView.snp.bottom)
             $0.height.equalTo(50)
+        }        
+        
+        reviewView.snp.makeConstraints {
+            $0.leading.equalTo(developerView)
+            $0.trailing.equalTo(developerView)
+            $0.top.equalTo(developerView.snp.bottom).offset(20)
+            $0.height.equalTo(500)
             
             // 중요: contentView의 끝에 맞춰 설정
             // 이거 안 하니까 자꾸 스크롤이 끝까지 안되고 다시 위로 튕김
             $0.bottom.equalTo(contentView.snp.bottom).inset(20)
-        }        
+        }
+        
+        firstReviewView.snp.makeConstraints {
+            $0.leading.equalTo(reviewView)
+            $0.top.equalTo(reviewView)
+            $0.height.equalTo(120)
+            $0.width.equalTo(headerView)
+        }
+        
+        secondReviewView.snp.makeConstraints {
+            $0.leading.equalTo(firstReviewView)
+            $0.top.equalTo(firstReviewView.snp.bottom)
+            $0.bottom.equalTo(reviewView.snp.bottom)
+            $0.width.equalTo(headerView)
+        }
         
         
     }
