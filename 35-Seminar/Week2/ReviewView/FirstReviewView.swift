@@ -70,7 +70,7 @@ class FirstReviewView: UIView {
             starStackView.axis = .horizontal
             
             for _ in 0..<count {
-                let star = UIImageView(image:UIImage(systemName: "star.fill"))
+                let star = UIImageView(image:UIImage(systemName: "star.fill")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 10)))
                 star.contentMode = .scaleAspectFit
                 star.tintColor = .gray
                 starStackView.addArrangedSubview(star)
@@ -99,13 +99,14 @@ class FirstReviewView: UIView {
             horizontalStack.addArrangedSubview(progressView)
             
             starStackView.snp.makeConstraints {
-                $0.leading.equalToSuperview()
-                $0.height.equalTo(10)
+                $0.leading.equalToSuperview().offset(20)
+                $0.height.equalTo(8)
             }
             
             progressView.snp.makeConstraints {
                 $0.trailing.equalToSuperview()
-                $0.width.equalTo(120)
+                $0.width.equalTo(150)
+                $0.height.equalTo(8)
             }
             
             stackView.addArrangedSubview(horizontalStack)
@@ -121,7 +122,7 @@ class FirstReviewView: UIView {
         
         label.snp.makeConstraints {
             $0.trailing.equalToSuperview()
-            $0.bottom.equalTo(stackView.snp.bottom).offset(20)
+            $0.bottom.equalToSuperview()
         }
         
         viewAllButton.snp.makeConstraints {
@@ -174,4 +175,9 @@ class FirstReviewView: UIView {
         viewController.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
+}
+
+
+#Preview {
+    TossView()
 }
