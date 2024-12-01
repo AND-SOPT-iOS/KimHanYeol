@@ -25,28 +25,43 @@ struct AppView: View {
 struct FinancialView: View {
     var body: some View {
         ScrollView{
-            LazyVStack {
+            VStack {
+                firstSection()
                 
-                // 첫 번째 섹션
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<App.collectionViewApps.count, id: \.self) { index in
-                            AppTileImageView(app: App.collectionViewApps[index])
-                                .padding(.horizontal)
-                                .clipShape(.rect(cornerRadius: 5))
-                        }
-                    }
-                }
-                .scrollTargetBehavior(.paging)
+                
+                
                 
             }
-            
-            
-            
-            
         }
     }
 }
+
+
+// MARK: - 첫 번째 섹션
+
+private struct firstSection: View {
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            Grid {
+                GridRow{
+                    ForEach(0..<App.collectionViewApps.count, id: \.self) { index in
+                        AppTileImageView(app: App.collectionViewApps[index])
+                            .padding(.horizontal)
+                            .clipShape(.rect(cornerRadius: 10))
+                    }
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+        .scrollTargetBehavior(.viewAligned)
+    }
+}
+
+
+// MARK: - 두 번째 섹션
+
+
+
 
 #Preview {
 //    AppView()
