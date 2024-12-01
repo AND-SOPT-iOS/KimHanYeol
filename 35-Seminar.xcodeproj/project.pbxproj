@@ -69,6 +69,7 @@
 		6C4A3CB42CFCA01600D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
 		6C4A3CB52CFCA01600D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		6C4A3CB62CFCA01600D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
+		6C4A3CD12CFCABB400D60C9A /* Reusable */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Reusable; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +186,7 @@
 		6C4A3CA52CFC9F1200D60C9A /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				6C4A3CD12CFCABB400D60C9A /* Reusable */,
 				6C4A3CA22CFC9F1200D60C9A /* Main */,
 				6C4A3CA42CFC9F1200D60C9A /* TodayTab */,
 				6C4A3C9D2CFC9F1200D60C9A /* GameTab */,
@@ -271,6 +273,7 @@
 				6C4A3CB42CFCA01600D60C9A /* View */,
 				6C4A3CB52CFCA01600D60C9A /* ViewModel */,
 				6C4A3CB62CFCA01600D60C9A /* View */,
+				6C4A3CD12CFCABB400D60C9A /* Reusable */,
 			);
 			name = "35-Seminar";
 			packageProductDependencies = (

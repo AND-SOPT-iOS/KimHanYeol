@@ -18,7 +18,6 @@ struct AppView: View {
             }
             .navigationTitle("앱")
 
-            
         }
     }
 }
