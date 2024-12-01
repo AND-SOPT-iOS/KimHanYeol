@@ -18,18 +18,18 @@ struct AppTileImageView: View {
                 Image(uiImage: app.iconImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 50)
+                    .frame(width: 40)
                     .clipShape(.buttonBorder)
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text(app.title)
                         .foregroundStyle(.white)
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         .lineLimit(1)
                     
                     Text(app.subTitle ?? app.category.rawValue)
                         .foregroundStyle(.white)
-                        .font(.system(size: 16, weight: .regular))
+                        .font(.system(size: 14, weight: .regular))
                         .lineLimit(1)
                 }
                 
@@ -41,8 +41,8 @@ struct AppTileImageView: View {
                     app.price == 0 ?
                     Text(app.downloadState.title ?? "") : Text("₩\(app.price)")
                 }
-                .frame(width: 110, height: 40)
-                .font(.system(size: 20, weight: .bold))
+                .frame(width: 80, height: 30)
+                .font(.system(size: 16, weight: .bold))
                 .background(.white.opacity(0.5))
                 .foregroundStyle(.white)
                 .clipShape(.capsule)
@@ -51,18 +51,31 @@ struct AppTileImageView: View {
             .padding()
 
         }
-        .frame(height: 250)
-        .background(LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.4)]),
-                                   startPoint: .top, endPoint: .bottom))
+        .frame(width: 300, height: 250)
+        .background(
+            LinearGradient(
+                gradient: Gradient(
+                    colors: [
+                        .clear,
+                        .black.opacity(
+                            0.4
+                        )
+                    ]
+                ),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(width: 350, height: 250)
+        )
         .background(content: {
             Image(uiImage: app.backgroundImage!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .clipShape(.buttonBorder)
         })
     }
 }
 
 #Preview {
-    AppTileImageView(app: App.collectionViewApps[1])
+//    AppTileImageView(app: App.collectionViewApps[1])
+    FinancialView()
 }
