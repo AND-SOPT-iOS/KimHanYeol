@@ -59,6 +59,16 @@
 		6C14AB732CCE8B2B004016BF /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6C14AB742CCE8B78004016BF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 6C14AB752CCE8B78004016BF /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 		6C341EA02CDC8E3B003DA5FC /* Network */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Network; sourceTree = "<group>"; };
 		6C341EAB2CDC8E50003DA5FC /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+		6C4A3CAD2CFCA00A00D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
+		6C4A3CAE2CFCA00E00D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		6C4A3CAF2CFCA01400D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		6C4A3CB02CFCA01400D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
+		6C4A3CB12CFCA01500D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		6C4A3CB22CFCA01500D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
+		6C4A3CB32CFCA01600D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		6C4A3CB42CFCA01600D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
+		6C4A3CB52CFCA01600D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		6C4A3CB62CFCA01600D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,8 @@
 		6C4A3C9B2CFC9F1200D60C9A /* ArcadeTab */ = {
 			isa = PBXGroup;
 			children = (
+				6C4A3CB42CFCA01600D60C9A /* View */,
+				6C4A3CB32CFCA01600D60C9A /* ViewModel */,
 			);
 			path = ArcadeTab;
 			sourceTree = "<group>";
@@ -112,6 +124,8 @@
 		6C4A3C9C2CFC9F1200D60C9A /* FinancialTab */ = {
 			isa = PBXGroup;
 			children = (
+				6C4A3CB22CFCA01500D60C9A /* View */,
+				6C4A3CB12CFCA01500D60C9A /* ViewModel */,
 			);
 			path = FinancialTab;
 			sourceTree = "<group>";
@@ -119,6 +133,8 @@
 		6C4A3C9D2CFC9F1200D60C9A /* GameTab */ = {
 			isa = PBXGroup;
 			children = (
+				6C4A3CB02CFCA01400D60C9A /* View */,
+				6C4A3CAF2CFCA01400D60C9A /* ViewModel */,
 			);
 			path = GameTab;
 			sourceTree = "<group>";
@@ -151,6 +167,8 @@
 		6C4A3CA32CFC9F1200D60C9A /* SearchTab */ = {
 			isa = PBXGroup;
 			children = (
+				6C4A3CB62CFCA01600D60C9A /* View */,
+				6C4A3CB52CFCA01600D60C9A /* ViewModel */,
 			);
 			path = SearchTab;
 			sourceTree = "<group>";
@@ -158,6 +176,8 @@
 		6C4A3CA42CFC9F1200D60C9A /* TodayTab */ = {
 			isa = PBXGroup;
 			children = (
+				6C4A3CAD2CFCA00A00D60C9A /* View */,
+				6C4A3CAE2CFCA00E00D60C9A /* ViewModel */,
 			);
 			path = TodayTab;
 			sourceTree = "<group>";
@@ -241,6 +261,16 @@
 				6C14AB732CCE8B2B004016BF /* Resources */,
 				6C341EA02CDC8E3B003DA5FC /* Network */,
 				6C341EAB2CDC8E50003DA5FC /* Extensions */,
+				6C4A3CAD2CFCA00A00D60C9A /* View */,
+				6C4A3CAE2CFCA00E00D60C9A /* ViewModel */,
+				6C4A3CAF2CFCA01400D60C9A /* ViewModel */,
+				6C4A3CB02CFCA01400D60C9A /* View */,
+				6C4A3CB12CFCA01500D60C9A /* ViewModel */,
+				6C4A3CB22CFCA01500D60C9A /* View */,
+				6C4A3CB32CFCA01600D60C9A /* ViewModel */,
+				6C4A3CB42CFCA01600D60C9A /* View */,
+				6C4A3CB52CFCA01600D60C9A /* ViewModel */,
+				6C4A3CB62CFCA01600D60C9A /* View */,
 			);
 			name = "35-Seminar";
 			packageProductDependencies = (

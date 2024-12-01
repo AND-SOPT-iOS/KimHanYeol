@@ -6,34 +6,44 @@
 //
 
 import SwiftUI
+import UIKit
+
+import Then
 
 struct MainView: View {
     @StateObject var viewModel = MainViewModel()
     
-    var body: some View {
-        
-        TabView {
-            
-            // Home
-            HomeView()
-                .tabItem { Label("홈", systemImage: "house") }
-            
-            // Library
-            LibraryView()
-                .tabItem { Label("서재", systemImage: "books.vertical") }
-            
-            // Record
-            RecordView()
-                .tabItem { Label("기록", systemImage: "applepencil") }
-            
-            // Option
-            OptionView()
-                .tabItem { Label("설정", systemImage: "gearshape") }
-            
-        }
+    init() {
+        UITabBar.appearance().backgroundColor = .opaqueSeparator.withAlphaComponent(0.2)
     }
     
-}
+    var body: some View {
+        TabView {
+            
+            // Today
+            TodayView()
+                .tabItem { Label("투데이", systemImage: "doc.text.image") }
+            
+            // Library
+            GameView()
+                .tabItem { Label("게임", systemImage: "gamecontroller") }
+            
+            // App
+            AppView()
+                .tabItem { Label("앱", systemImage: "square.stack.3d.up") }
+            
+            // Arcade
+            ArcadeView()
+                .tabItem { Label("Arcade", systemImage: "arcade.stick.console") }
+            
+            // Search
+            SearchView()
+                .tabItem { Label("검색", systemImage: "gearshape") }
+            
+        }
+        
+        
+    }
 }
 
 
