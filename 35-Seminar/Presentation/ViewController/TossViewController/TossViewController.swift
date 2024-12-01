@@ -25,7 +25,6 @@ class TossViewController: UIViewController{
     private var reviewListCollectionView = TossReviewListCollectionView()
     private var tossImageView = UIImageView()
     private var openButton = UIButton()
-    private var navigationHeaderView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,11 @@ class TossViewController: UIViewController{
         setUI()
         setStyle()
         setLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func setStyle() {
@@ -154,6 +158,5 @@ class TossViewController: UIViewController{
         }
         
     }
-    
 
 }

@@ -7,7 +7,8 @@
 
 import UIKit
 
-struct App {
+struct App: Identifiable {
+    var id: UUID
     let iconImage: UIImage
     let ranking: Int
     let title: String
@@ -21,6 +22,7 @@ struct App {
     // FreeApps Mock Data
     static let freeApps: [App] = [
         App(
+            id: UUID(),
             iconImage: .silson24,
             ranking: 1,
             title: "실손24",
@@ -32,6 +34,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .toss,
             ranking: 2,
             title: "토스",
@@ -43,6 +46,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .naverpay,
             ranking: 3,
             title: "네이버페이",
@@ -54,6 +58,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .kakaopay,
             ranking: 4,
             title: "카카오페이",
@@ -65,6 +70,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .kbpay,
             ranking: 5,
             title: "KB Pay",
@@ -76,6 +82,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .monimo,
             ranking: 6,
             title: "monimo (모니모, 삼성금융네트웍스)",
@@ -87,6 +94,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .kbstarbank,
             ranking: 7,
             title: "KB스타뱅킹",
@@ -98,6 +106,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .travelwallet,
             ranking: 8,
             title: "트래블월렛 - travel Pay",
@@ -109,6 +118,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .namu,
             ranking: 9,
             title: "나무증권 - NH투자증권 MTS",
@@ -120,6 +130,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .onetwo,
             ranking: 10,
             title: "한투-한국투자증권,MTS,투자,증권,해외주식,주식",
@@ -131,6 +142,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .kakaobank,
             ranking: 11,
             title: "카카오뱅크",
@@ -142,6 +154,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .solbank,
             ranking: 12,
             title: "신한 SOL 뱅크 - 신한은행 스마트폰뱅킹",
@@ -153,6 +166,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .nhbank,
             ranking: 13,
             title: "NH올원뱅크",
@@ -164,6 +178,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .hanabank,
             ranking: 14,
             title: "하나은행, 하나원큐는 돈기운 가득한 은행 앱",
@@ -175,6 +190,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .kbank,
             ranking: 15,
             title: "케이뱅크 (Kbank)",
@@ -186,6 +202,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .v3,
             ranking: 16,
             title: "V3 Mobile Plus",
@@ -197,6 +214,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .mobileTmoney,
             ranking: 17,
             title: "모바일티머니",
@@ -208,6 +226,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .hyundaicard,
             ranking: 18,
             title: "현대카드",
@@ -219,6 +238,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .solpay,
             ranking: 19,
             title: "신한 SOL페이 - 신한카드 대표플랫폼",
@@ -230,6 +250,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .hyundaidepartment,
             ranking: 20,
             title: "현대백화점",
@@ -246,6 +267,7 @@ struct App {
     // PaidApps Mock Data
     static let paidApps: [App] = [
         App(
+            id: UUID(),
             iconImage: .weeple,
             ranking: 1,
             title: "위플 가계부 Pro",
@@ -257,6 +279,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .easymoneybook,
             ranking: 2,
             title: "편한가계부 (광고제거)",
@@ -268,6 +291,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .membershipwidget,
             ranking: 3,
             title: "멤버십 위젯 Pro",
@@ -279,6 +303,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .securitywidget,
             ranking: 4,
             title: "보안카드 위젯",
@@ -290,6 +315,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .bafinancialcalculator,
             ranking: 5,
             title: "Ba Financial Calculator (PRO)",
@@ -301,6 +327,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .myanmarmarket,
             ranking: 6,
             title: "Myanmar Market Price Pro",
@@ -312,6 +339,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .costit,
             ranking: 7,
             title: "코스트잇",
@@ -323,6 +351,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .baii,
             ranking: 8,
             title: "BA II Plus Inancial Calc",
@@ -334,6 +363,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .easymoneybookclassic,
             ranking: 9,
             title: "편한가계부 Classic (+ PC 가계부 )",
@@ -349,6 +379,7 @@ struct App {
     // CollectionView Apps Mock Data
     static let collectionViewApps: [App] = [
         App(
+            id: UUID(),
             iconImage: .currenzy,
             ranking: 1,
             title: "Currenzy",
@@ -360,6 +391,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .fortunecity,
             ranking: 2,
             title: "Fortune City - A Finance App",
@@ -371,6 +403,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .elk,
             ranking: 3,
             title: "Elk - 여행 환율 변환기",
@@ -382,6 +415,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .taxnote,
             ranking: 4,
             title: "Taxnote 부기 및 회계 앱",
@@ -397,6 +431,7 @@ struct App {
     // EssentialApps Mock Data
     static let essentialApps: [App] = [
         App(
+            id: UUID(),
             iconImage: .ifinance5,
             ranking: 1,
             title: "iFinance 5",
@@ -408,6 +443,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .moneycoach,
             ranking: 2,
             title: "Money Coach Budget Managet",
@@ -419,6 +455,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .finances2,
             ranking: 3,
             title: "Finances 2",
@@ -430,6 +467,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .moneycontrol,
             ranking: 4,
             title: "MoneyControl Spending Tracker",
@@ -441,6 +479,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .ynab,
             ranking: 5,
             title: "YNAB",
@@ -452,6 +491,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .splitwise,
             ranking: 6,
             title: "Splitwise",
@@ -463,6 +503,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .spendy,
             ranking: 7,
             title: "Spendy",
@@ -474,6 +515,7 @@ struct App {
             inAppPrice: false
         ),
         App(
+            id: UUID(),
             iconImage: .cashcounter,
             ranking: 8,
             title: "CashCounter",
@@ -485,6 +527,7 @@ struct App {
             inAppPrice: true
         ),
         App(
+            id: UUID(),
             iconImage: .macaw,
             ranking: 9,
             title: "Macaw: Budget & Save Money",

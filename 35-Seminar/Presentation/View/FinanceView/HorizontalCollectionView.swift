@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 import SnapKit
 
@@ -121,10 +122,8 @@ class HorizontalCollectionView: UITableViewCell {
    
    @objc private func viewAllButtonTapped() {
        guard let viewController = viewController() else { return }
-       let nextViewController = PopularChartViewController()
-       nextViewController.navigationItem.backButtonTitle = "앱"
-       nextViewController.navigationItem.title = "인기 차트"
-       nextViewController.navigationItem.setRightBarButton(UIBarButtonItem(title: "금융"), animated: true)
+       let nextViewController = UIHostingController(rootView: PopularViewSwiftUI())
+       
        viewController.navigationController?.pushViewController(nextViewController, animated: true)
    }
     
