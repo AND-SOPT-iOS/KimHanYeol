@@ -7,9 +7,21 @@
 
 import SwiftUI
 
+import RxSwift
+import RxCocoa
+
 struct SearchView: View {
+    let apps: [App] = App.freeApps
+    
     var body: some View {
-        Text("SearchView")
+        
+        // 검색창 rx로 만들기
+        
+        List(apps) { index in
+            AppTileView(app: index)
+        }
+        .listStyle(.inset)
+
     }
 }
 
