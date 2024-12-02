@@ -24,16 +24,18 @@ struct AppView: View {
 
 struct FinancialView: View {
     var body: some View {
-        ScrollView{
-            VStack(alignment: .leading, spacing: 15) {
-                firstSection()
-                secondSection()
-                thirdSection()
-                fourthSection()
+        NavigationStack{
+            ScrollView{
+                VStack(alignment: .leading, spacing: 15) {
+                    firstSection()
+                    secondSection()
+                    thirdSection()
+                    fourthSection()
+                }
             }
+            .navigationTitle("금융")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("금융")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -166,9 +168,14 @@ private struct fourthSection: View {
                 Text("무료 순위")
                     .font(.system(size: 26, weight: .semibold))
                 
-                Image(systemName: "chevron.right")
-                    .foregroundStyle(.gray)
-                    .bold()
+                NavigationLink {
+                    MainView()
+                } label: {
+                    Image(systemName: "chevron.right")
+                        .foregroundStyle(.gray)
+                        .bold()
+                }
+
             }
             
             ScrollView(.horizontal, showsIndicators: false){
