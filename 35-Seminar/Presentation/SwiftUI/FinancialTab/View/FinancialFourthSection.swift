@@ -36,8 +36,17 @@ struct FinancialFourthSection: View {
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            let app = App.freeApps[(index * 3) + 1]
-                            AppTileView(app: App.freeApps[app])
+                            let app = (index * 3) + 1
+                            if App.freeApps[app].title == "토스" {
+                                NavigationLink(destination: {
+                                    TossView()
+                                }, label: {
+                                    AppTileView(app: App.freeApps[app])
+                                        .foregroundStyle(.black)
+                                })
+                            } else {
+                                AppTileView(app: App.freeApps[app])
+                            }
                         }
                     }
                     
@@ -54,6 +63,7 @@ struct FinancialFourthSection: View {
             .scrollTargetBehavior(.paging)
         }
         .padding(20)
+        .navigationTitle("금융")
     }
 }
 

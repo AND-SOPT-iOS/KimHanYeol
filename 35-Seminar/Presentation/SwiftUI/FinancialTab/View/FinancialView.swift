@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum Destination: Hashable {
+    case Toss
+}
+
 struct AppView: View {
     var body: some View {
         NavigationStack{
@@ -24,7 +28,7 @@ struct AppView: View {
 
 struct FinancialView: View {
     var body: some View {
-        NavigationStack{
+        NavigationStack(){
             ScrollView{
                 VStack(alignment: .leading, spacing: 15) {
                     FinancialFirstSection()
@@ -33,7 +37,6 @@ struct FinancialView: View {
                     FinancialFourthSection()
                 }
             }
-            .navigationTitle("금융")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
