@@ -25,11 +25,11 @@ struct AppView: View {
 struct FinancialView: View {
     var body: some View {
         ScrollView{
-            VStack {
+            VStack(alignment: .leading) {
                 firstSection()
+                    .padding(.bottom, 20)
                 
-                
-                
+                secondSection()
                 
             }
         }
@@ -37,7 +37,7 @@ struct FinancialView: View {
 }
 
 
-// MARK: - 첫 번째 섹션
+// MARK: - 첫 번째 섹션: Grid로 구현!
 
 private struct firstSection: View {
     var body: some View {
@@ -58,12 +58,55 @@ private struct firstSection: View {
 }
 
 
-// MARK: - 두 번째 섹션
+// MARK: - 두 번째 섹션:
 
+private struct secondSection: View {
+    var body: some View {
+        VStack(alignment: .leading){
+            HStack{
+                Text("필수 금융앱")
+                    .font(.system(size: 26, weight: .semibold))
+                
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.gray)
+                    .bold()
+            }
+            
+            Text("App Store 에디터가 직접 골랐습니다")
+                .font(.system(size: 18, weight: .regular))
+                .foregroundStyle(.gray)
+            
+            ScrollView(.horizontal, showsIndicators: false){
+                Grid(horizontalSpacing: 15){
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.essentialApps[(index*3) + 0])
+                        }
+                    }
+                    
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.essentialApps[(index*3) + 1])
+                        }
+                    }
+                    
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.essentialApps[(index*3) + 2])
+                        }
+                    }
+                    
+                }
+            }
+            .scrollTargetBehavior(.paging)
+        }
+        .padding(20)
+    }
+}
 
 
 
 #Preview {
-//    AppView()
+    //    AppView()
     FinancialView()
 }

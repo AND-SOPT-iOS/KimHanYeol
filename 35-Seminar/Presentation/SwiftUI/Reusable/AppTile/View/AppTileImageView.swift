@@ -16,50 +16,58 @@ struct AppTileImageView: View {
             VStack(alignment: .leading){
                 if app.ranking == 1 {
                     Text("추천")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(.blue)
                     
                     Text(app.title)
-                        .font(.system(size: 22))
+                        .font(.system(size: 28))
+                        .frame(width: 300, alignment: .leading)
+                        .lineLimit(1)
                     
                     Text("빠르고 쉬운 환율 계산")
-                        .font(.system(size: 16))
+                        .font(.system(size: 20))
                         .foregroundStyle(.gray)
                     
                 } else if app.ranking == 2 {
                     Text("새로운 경험")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(.blue)
                     
                     Text(app.title)
-                        .font(.system(size: 22))
-                    
+                        .font(.system(size: 28))
+                        .frame(width: 250, alignment: .leading)
+                        .lineLimit(1)
+
                     Text("게임을 하듯 관리하는 가계부")
-                        .font(.system(size: 16))
+                        .font(.system(size: 20))
                         .foregroundStyle(.gray)
                     
                 } else if app.ranking == 2 {
                     Text("새로운 앱")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(.blue)
                     
                     Text(app.title)
-                        .font(.system(size: 22))
-                    
+                        .font(.system(size: 28))
+                        .frame(width: 250, alignment: .leading)
+                        .lineLimit(1)
+
                     Text("언제 어디서나 간편한 환율 체크")
-                        .font(.system(size: 16))
+                        .font(.system(size: 20))
                         .foregroundStyle(.gray)
                     
                 } else {
                     Text("추천")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(.blue)
                     
                     Text(app.title)
-                        .font(.system(size: 22))
-                    
+                        .font(.system(size: 28))
+                        .frame(width: 250, alignment: .leading)
+                        .lineLimit(1)
+
                     Text("간편한 장부 관리")
-                        .font(.system(size: 16))
+                        .font(.system(size: 20))
                         .foregroundStyle(.gray)
                     
                 }

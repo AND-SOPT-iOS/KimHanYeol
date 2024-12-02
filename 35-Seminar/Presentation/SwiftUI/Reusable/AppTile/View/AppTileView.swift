@@ -32,6 +32,8 @@ struct AppTileView: View {
                     .font(.system(size: 16, weight: .regular))
                     .lineLimit(1)
             }
+            .frame(width: 130, alignment: .leading)
+            
             
             Spacer()
             
@@ -54,5 +56,6 @@ struct AppTileView: View {
 }
 
 #Preview {
-    AppTileView(app: App.freeApps[0])
+//    AppTileView(app: App.essentialApps[1])
+    FinancialView()
 }
