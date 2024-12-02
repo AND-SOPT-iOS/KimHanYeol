@@ -25,12 +25,11 @@ struct AppView: View {
 struct FinancialView: View {
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 15) {
                 firstSection()
-                    .padding(.bottom, 20)
-                
                 secondSection()
-                
+                thirdSection()
+                fourthSection()
             }
         }
         .navigationTitle("금융")
@@ -86,11 +85,15 @@ private struct secondSection: View {
                         }
                     }
                     
+                    Divider()
+                    
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
                             AppTileView(app: App.essentialApps[(index*3) + 1])
                         }
                     }
+                    
+                    Divider()
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
@@ -105,6 +108,101 @@ private struct secondSection: View {
         .padding(20)
     }
 }
+
+
+// MARK: - 세 번째 섹션:
+
+private struct thirdSection: View {
+    var body: some View {
+        VStack(alignment: .leading){
+            HStack{
+                Text("유료 순위")
+                    .font(.system(size: 26, weight: .semibold))
+                
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.gray)
+                    .bold()
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false){
+                Grid(horizontalSpacing: 15){
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.paidApps[(index*3) + 0])
+                        }
+                    }
+                    
+                    Divider()
+                    
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.paidApps[(index*3) + 1])
+                        }
+                    }
+                    
+                    Divider()
+                    
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.paidApps[(index*3) + 2])
+                        }
+                    }
+                    
+                }
+            }
+            .scrollTargetBehavior(.paging)
+        }
+        .padding(20)
+    }
+}
+
+
+// MARK: - 네 번째 섹션:
+
+private struct fourthSection: View {
+    var body: some View {
+        VStack(alignment: .leading){
+            HStack{
+                Text("무료 순위")
+                    .font(.system(size: 26, weight: .semibold))
+                
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.gray)
+                    .bold()
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false){
+                Grid(horizontalSpacing: 15){
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.freeApps[(index*3) + 0])
+                        }
+                    }
+                    
+                    Divider()
+                    
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.freeApps[(index*3) + 1])
+                        }
+                    }
+                    
+                    Divider()
+                    
+                    GridRow{
+                        ForEach(0..<3, id: \.self) { index in
+                            AppTileView(app: App.freeApps[(index*3) + 2])
+                        }
+                    }
+                    
+                }
+            }
+            .scrollTargetBehavior(.paging)
+        }
+        .padding(20)
+    }
+}
+
 
 
 
