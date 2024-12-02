@@ -10,26 +10,16 @@ import SwiftUI
 struct TossView: View {
     var body: some View {
         ScrollView(showsIndicators: false){
-            TossSectionOne()
-                .padding(.bottom, 20)
-            
+            TossSectionOne().padding(.bottom, 20)
             Divider()
-            
-            TossSectionTwo()
-                .padding(.bottom, 20)
-            
+            TossSectionTwo().padding(.bottom, 20)
             TossSectionThree()
-            
-            Divider()
-                .padding(.bottom, 20)
-            
+            Divider().padding(.bottom, 20)
             TossSectionFour()
-            
             TossSectionFive()
-            
-            
         }
         .padding(.horizontal, 20)
+        .padding(.vertical, 10)
     }
 }
 
@@ -65,7 +55,7 @@ struct TossSectionOne: View {
                         .background(.blue)
                         .clipShape(.capsule)
                 }
-
+                
             }
             .padding(.horizontal, 10)
             
@@ -155,38 +145,38 @@ struct TossSectionTwo: View {
 struct TossSectionThree: View {
     var body: some View {
         VStack(alignment: .leading){
-            ScrollView(.horizontal){
-                    HStack{
-                        Image(.tosspreview01)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                            .clipShape(.rect(cornerRadius: 5))
-                        
-                        Image(.tosspreview02)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                            .clipShape(.rect(cornerRadius: 5))
-                        
-                        Image(.tosspreview03)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                            .clipShape(.rect(cornerRadius: 5))
-                        
-                        Image(.tosspreview04)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                            .clipShape(.rect(cornerRadius: 5))
-                        
-                        Image(.tosspreview05)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
-                            .clipShape(.rect(cornerRadius: 5))
-                    }
+            ScrollView(.horizontal, showsIndicators: false){
+                HStack{
+                    Image(.tosspreview01)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Image(.tosspreview02)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Image(.tosspreview03)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Image(.tosspreview04)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Image(.tosspreview05)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        .clipShape(.rect(cornerRadius: 5))
+                }
             }
             
             HStack{
@@ -199,7 +189,7 @@ struct TossSectionThree: View {
             }
             .padding()
             .foregroundStyle(.gray)
-                
+            
         }
         
     }
@@ -282,7 +272,7 @@ struct TossSectionFive: View {
             Text("가장 도움이 되는 리뷰")
                 .font(.system(size: 18, weight: .semibold))
                 .padding(.bottom, 10)
-                
+            
             TabView{
                 ForEach(0..<5) { index in
                     VStack(alignment: .leading, spacing: 5){
