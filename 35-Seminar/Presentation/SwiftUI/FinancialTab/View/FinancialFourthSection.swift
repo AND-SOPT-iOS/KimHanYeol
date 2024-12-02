@@ -15,7 +15,7 @@ struct FinancialFourthSection: View {
                     .font(.system(size: 26, weight: .semibold))
                 
                 NavigationLink {
-                    TossView()
+                    PopularView()
                 } label: {
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.gray)

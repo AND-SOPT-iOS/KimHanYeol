@@ -23,6 +23,7 @@
 		6CE9F7602CFE385700F53D73 /* FinancialSecondSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F75A2CFE385700F53D73 /* FinancialSecondSection.swift */; };
 		6CE9F7612CFE385700F53D73 /* FinancialThirdSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F75B2CFE385700F53D73 /* FinancialThirdSection.swift */; };
 		6CE9F7622CFE385700F53D73 /* FinancialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F75C2CFE385700F53D73 /* FinancialView.swift */; };
+		6CE9F7642CFE3D8400F53D73 /* PopularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F7632CFE3D8400F53D73 /* PopularView.swift */; };
 		6CFA97D02CB1017F004B6A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA97CF2CB1017F004B6A40 /* AppDelegate.swift */; };
 		6CFA97D22CB1017F004B6A40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA97D12CB1017F004B6A40 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		6CE9F75A2CFE385700F53D73 /* FinancialSecondSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialSecondSection.swift; sourceTree = "<group>"; };
 		6CE9F75B2CFE385700F53D73 /* FinancialThirdSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialThirdSection.swift; sourceTree = "<group>"; };
 		6CE9F75C2CFE385700F53D73 /* FinancialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialView.swift; sourceTree = "<group>"; };
+		6CE9F7632CFE3D8400F53D73 /* PopularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularView.swift; sourceTree = "<group>"; };
 		6CFA97CC2CB1017F004B6A40 /* 35-Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "35-Seminar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFA97CF2CB1017F004B6A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CFA97D12CB1017F004B6A40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				6CE9F75A2CFE385700F53D73 /* FinancialSecondSection.swift */,
 				6CE9F75B2CFE385700F53D73 /* FinancialThirdSection.swift */,
 				6CE9F7592CFE385700F53D73 /* FinancialFourthSection.swift */,
+				6CE9F7632CFE3D8400F53D73 /* PopularView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CFA97D02CB1017F004B6A40 /* AppDelegate.swift in Sources */,
+				6CE9F7642CFE3D8400F53D73 /* PopularView.swift in Sources */,
 				6C4A3CA72CFC9F1200D60C9A /* AppCategory.swift in Sources */,
 				6C4A3CA82CFC9F1200D60C9A /* DownloadState.swift in Sources */,
 				6C4A3CA92CFC9F1200D60C9A /* App.swift in Sources */,
