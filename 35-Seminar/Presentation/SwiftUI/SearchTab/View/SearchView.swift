@@ -13,68 +13,81 @@ import RxCocoa
 import SnapKit
 import Then
 
-
 class SearchView: UIViewController {
-    
     private let apps: [App] = App.collectionViewApps + App.essentialApps + App.freeApps + App.paidApps
     
+    private let searchbar = UISearchBar()
     private let tableView = UITableView()
-    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setStyle()
         setLayout()
+        bind()
     }
     
     private func setStyle() {
+        searchbar.do {
+            $0.placeholder = "검색어를 입력해주세요."
+            $0.searchBarStyle = .minimal
+            $0.searchTextField.layer.cornerRadius = 10
+        }
         
         tableView.do {
             $0.register(SearchViewCell.self, forCellReuseIdentifier: SearchViewCell.cellIdentifier)
-            $0.dataSource = self
             $0.delegate = self
         }
-        
     }
     
     private func setUI() {
-        
-        view.addSubview(tableView)
-        
+        view.addSubviews(searchbar, tableView)
     }
     
     private func setLayout() {
-        
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        searchbar.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(50)
         }
+        
+        tableView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview()
+            $0.top.equalTo(searchbar.snp.bottom)
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
+    private func bind() {
+        searchbar.rx.text.orEmpty
+            .distinctUntilChanged() // 이전 값과 다른 경우에만 방출
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance) // 300ms 지연
+            .map { query in
+                self.apps.filter { app in
+                    app.title.lowercased().contains(query.lowercased()) || query.isEmpty
+                }
+            }
+            .bind(to: tableView.rx.items(cellIdentifier: SearchViewCell.cellIdentifier, cellType: SearchViewCell.self)) { _, app, cell in
+                cell.configure(with: app)
+            }
+            .disposed(by: disposeBag)
+        
+        
+        tableView.rx.modelSelected(App.self)
+            .subscribe(onNext: { selectedItem in
+                // 토스 선택되면 토스로 화면전환
+            })
+            .disposed(by: disposeBag)
         
     }
     
 }
 
-extension SearchView: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return apps.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchViewCell.cellIdentifier, for: indexPath) as? SearchViewCell else {
-            return UITableViewCell()
-        }
-        let app = apps[indexPath.row]
-        cell.configure(with: app)
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        
-        return cell
-    }
-    
+extension SearchView: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
-    
 }
 
 #Preview {
