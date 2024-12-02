@@ -10,17 +10,21 @@ import SwiftUI
 struct TossView: View {
     var body: some View {
         ScrollView{
-            TossHeaderView()
-                .padding(20)
+            TossFirstSection()
+                .padding(.bottom, 20)
             
             Divider()
             
+            TossSecondSection()
+                .padding(.bottom, 20)
+            
             
         }
+        .padding(.horizontal, 20)
     }
 }
 
-struct TossHeaderView: View {
+struct TossFirstSection: View {
     var body: some View {
         HStack(alignment: .bottom){
             Image(.tossApp)
@@ -64,6 +68,77 @@ struct TossHeaderView: View {
                 .frame(width: 20)
                 .foregroundStyle(.blue)
                 .padding(.bottom, 5)
+        }
+    }
+}
+
+struct TossSecondSection: View {
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false){
+            HStack{
+                
+                VStack(spacing: 5){
+                    Text("8.4만개의 평가")
+                        .font(.system(size: 14))
+                    
+                    Text("4.4")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    
+                    HStack(spacing:0){
+                        ForEach(0..<4) { _ in
+                            Image(systemName: "star.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 15)
+                        }
+                        Image(systemName: "star.leadinghalf.filled")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15)
+                    }
+                }
+                .foregroundStyle(.gray)
+                .frame(width: 90)
+                .padding(.trailing, 10)
+                
+                Divider()
+                    .frame(height: 50)
+                
+                VStack(spacing: 10){
+                    Text("수상")
+                        .font(.system(size: 14))
+                    
+                    Image(systemName: "person")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20)
+                    
+                    Text("앱")
+                        .font(.system(size: 16))
+                }
+                .foregroundStyle(.gray)
+                .frame(width: 90)
+                
+                Divider()
+                    .frame(height: 50)
+                
+                VStack(spacing: 5){
+                    Text("연령")
+                        .font(.system(size: 14))
+                    
+                    Text("4+")
+                        .font(.system(size: 26, weight: .semibold, design: .rounded))
+                    
+                    Text("세")
+                        .font(.system(size: 16))
+                }
+                .foregroundStyle(.gray)
+                .frame(width: 90)
+                
+                Divider()
+                    .frame(height: 50)
+                
+            }
         }
     }
 }
