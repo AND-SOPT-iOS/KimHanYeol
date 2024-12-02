@@ -73,6 +73,7 @@ struct AppTileImageView: View {
                 }
                 
             }
+            .padding(.top, 10)
             
             VStack{
                 Spacer()

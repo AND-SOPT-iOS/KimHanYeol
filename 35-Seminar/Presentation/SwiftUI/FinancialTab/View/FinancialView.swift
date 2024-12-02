@@ -33,6 +33,8 @@ struct FinancialView: View {
                 
             }
         }
+        .navigationTitle("금융")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -107,6 +109,6 @@ private struct secondSection: View {
 
 
 #Preview {
-    //    AppView()
-    FinancialView()
+        AppView()
+//    FinancialView()
 }
