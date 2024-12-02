@@ -10,6 +10,16 @@ import UIKit
 
 import Then
 
+struct SearchViewWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> SearchView {
+        return SearchView()
+    }
+    
+    func updateUIViewController(_ uiViewController: SearchView, context: Context) {
+        // 업데이트 로직 필요 시 여기에 추가
+    }
+}
+
 struct MainView: View {
     @StateObject var viewModel = MainViewModel()
     
@@ -37,8 +47,8 @@ struct MainView: View {
                 .tabItem { Label("Arcade", systemImage: "arcade.stick.console") }
             
             // Search
-            SearchView()
-                .tabItem { Label("검색", systemImage: "gearshape") }
+            SearchViewWrapper()
+                .tabItem { Label("검색", systemImage: "magnifyingglass") }
             
         }
         
