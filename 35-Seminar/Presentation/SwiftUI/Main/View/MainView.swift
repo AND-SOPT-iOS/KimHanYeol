@@ -47,8 +47,10 @@ struct MainView: View {
                 .tabItem { Label("Arcade", systemImage: "arcade.stick.console") }
             
             // Search
-            SearchViewWrapper()
-                .tabItem { Label("검색", systemImage: "magnifyingglass") }
+            NavigationStack{
+                SearchViewWrapper()
+            }
+            .tabItem { Label("검색", systemImage: "magnifyingglass") }
             
         }
         

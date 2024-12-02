@@ -7,6 +7,7 @@
 //  RxSwift 스터디 과제를 위해 유킷으로 구현!
 
 import UIKit
+import SwiftUI
 
 import RxSwift
 import RxCocoa
@@ -61,8 +62,8 @@ class SearchView: UIViewController {
     
     private func bind() {
         searchbar.rx.text.orEmpty
-            .distinctUntilChanged() // 이전 값과 다른 경우에만 방출
-            .debounce(.milliseconds(300), scheduler: MainScheduler.instance) // 300ms 지연
+            .distinctUntilChanged()
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .map { query in
                 self.apps.filter { app in
                     app.title.lowercased().contains(query.lowercased()) || query.isEmpty
@@ -75,8 +76,10 @@ class SearchView: UIViewController {
         
         
         tableView.rx.modelSelected(App.self)
-            .subscribe(onNext: { selectedItem in
-                // 토스 선택되면 토스로 화면전환
+            .filter { $0.title == "토스" }
+            .subscribe(onNext: { [weak self] selectedItem in
+                let tossViewController = UIHostingController(rootView: TossView())
+                self?.navigationController?.pushViewController(tossViewController, animated: true)
             })
             .disposed(by: disposeBag)
         

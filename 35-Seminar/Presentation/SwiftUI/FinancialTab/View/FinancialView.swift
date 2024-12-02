@@ -169,7 +169,7 @@ private struct fourthSection: View {
                     .font(.system(size: 26, weight: .semibold))
                 
                 NavigationLink {
-                    MainView()
+                    TossView()
                 } label: {
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.gray)
