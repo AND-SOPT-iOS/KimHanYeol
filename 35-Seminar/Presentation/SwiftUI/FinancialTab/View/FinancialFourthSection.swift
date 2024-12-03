@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FinancialFourthSection: View {
+    @ObservedObject var viewModel: FinancialViewModel
+    
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Text("무료 순위")
+                Text(viewModel.fourthSectionHeader)
                     .font(.system(size: 26, weight: .semibold))
                 
                 NavigationLink {
@@ -28,7 +30,7 @@ struct FinancialFourthSection: View {
                 Grid(horizontalSpacing: 15){
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.freeApps[(index*3) + 0])
+                            AppTileView(app: viewModel.freeApps[(index*3) + 0])
                         }
                     }
                     
@@ -37,15 +39,15 @@ struct FinancialFourthSection: View {
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
                             let app = (index * 3) + 1
-                            if App.freeApps[app].title == "토스" {
+                            if viewModel.freeApps[app].title == "토스" {
                                 NavigationLink(destination: {
                                     TossView()
                                 }, label: {
-                                    AppTileView(app: App.freeApps[app])
+                                    AppTileView(app: viewModel.freeApps[app])
                                         .foregroundStyle(.black)
                                 })
                             } else {
-                                AppTileView(app: App.freeApps[app])
+                                AppTileView(app: viewModel.freeApps[app])
                             }
                         }
                     }
@@ -54,7 +56,7 @@ struct FinancialFourthSection: View {
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.freeApps[(index*3) + 2])
+                            AppTileView(app: viewModel.freeApps[(index*3) + 2])
                         }
                     }
                     
@@ -65,8 +67,4 @@ struct FinancialFourthSection: View {
         .padding(20)
         .navigationTitle("금융")
     }
-}
-
-#Preview {
-    FinancialFourthSection()
 }

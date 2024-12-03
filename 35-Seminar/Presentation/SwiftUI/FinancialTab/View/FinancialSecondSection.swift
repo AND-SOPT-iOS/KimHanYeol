@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FinancialSecondSection: View {
+    @ObservedObject var viewModel: FinancialViewModel
+    
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Text("필수 금융앱")
+                Text(viewModel.secondSectionHeader)
                     .font(.system(size: 26, weight: .semibold))
                 
                 Image(systemName: "chevron.right")
@@ -19,7 +21,7 @@ struct FinancialSecondSection: View {
                     .bold()
             }
             
-            Text("App Store 에디터가 직접 골랐습니다")
+            Text(viewModel.secondSectionSubHeader)
                 .font(.system(size: 18, weight: .regular))
                 .foregroundStyle(.gray)
             
@@ -27,7 +29,7 @@ struct FinancialSecondSection: View {
                 Grid(horizontalSpacing: 15){
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.essentialApps[(index*3) + 0])
+                            AppTileView(app: viewModel.essentialApps[(index*3) + 0])
                         }
                     }
                     
@@ -35,7 +37,7 @@ struct FinancialSecondSection: View {
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.essentialApps[(index*3) + 1])
+                            AppTileView(app: viewModel.essentialApps[(index*3) + 1])
                         }
                     }
                     
@@ -43,7 +45,7 @@ struct FinancialSecondSection: View {
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.essentialApps[(index*3) + 2])
+                            AppTileView(app: viewModel.essentialApps[(index*3) + 2])
                         }
                     }
                     
@@ -56,5 +58,5 @@ struct FinancialSecondSection: View {
 }
 
 #Preview {
-    FinancialSecondSection()
+    FinancialView()
 }

@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FinancialThirdSection: View {
+    @ObservedObject var viewModel: FinancialViewModel
+    
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Text("유료 순위")
+                Text(viewModel.thirdSectionHeader)
                     .font(.system(size: 26, weight: .semibold))
                 
                 Image(systemName: "chevron.right")
@@ -23,7 +25,7 @@ struct FinancialThirdSection: View {
                 Grid(horizontalSpacing: 15){
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.paidApps[(index*3) + 0])
+                            AppTileView(app: viewModel.paidApps[(index*3) + 0])
                         }
                     }
                     
@@ -31,7 +33,7 @@ struct FinancialThirdSection: View {
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.paidApps[(index*3) + 1])
+                            AppTileView(app: viewModel.paidApps[(index*3) + 1])
                         }
                     }
                     
@@ -39,7 +41,7 @@ struct FinancialThirdSection: View {
                     
                     GridRow{
                         ForEach(0..<3, id: \.self) { index in
-                            AppTileView(app: App.paidApps[(index*3) + 2])
+                            AppTileView(app: viewModel.paidApps[(index*3) + 2])
                         }
                     }
                     
@@ -49,8 +51,4 @@ struct FinancialThirdSection: View {
         }
         .padding(20)
     }
-}
-
-#Preview {
-    FinancialThirdSection()
 }

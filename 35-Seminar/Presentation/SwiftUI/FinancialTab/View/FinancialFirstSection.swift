@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct FinancialFirstSection: View {
+    @ObservedObject var viewModel: FinancialViewModel
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             Grid {
                 GridRow{
                     ForEach(0..<App.collectionViewApps.count, id: \.self) { index in
-                        AppTileImageView(app: App.collectionViewApps[index])
+                        AppTileImageView(app: viewModel.collectionViewApps[index])
                             .padding(.horizontal)
                             .clipShape(.rect(cornerRadius: 10))
                     }
@@ -26,5 +28,5 @@ struct FinancialFirstSection: View {
 }
 
 #Preview {
-    FinancialFirstSection()
+    FinancialView()
 }

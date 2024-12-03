@@ -27,14 +27,16 @@ struct AppView: View {
 }
 
 struct FinancialView: View {
+    @StateObject var viewModel = FinancialViewModel()
+    
     var body: some View {
         NavigationStack(){
             ScrollView{
                 VStack(alignment: .leading, spacing: 15) {
-                    FinancialFirstSection()
-                    FinancialSecondSection()
-                    FinancialThirdSection()
-                    FinancialFourthSection()
+                    FinancialFirstSection(viewModel: viewModel)
+                    FinancialSecondSection(viewModel: viewModel)
+                    FinancialThirdSection(viewModel: viewModel)
+                    FinancialFourthSection(viewModel: viewModel)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
