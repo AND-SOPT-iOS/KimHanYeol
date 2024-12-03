@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TossSectionOne: View {
+    @ObservedObject var viewModel: TossViewModel
+    
     var body: some View {
         HStack(alignment: .bottom){
             Image(.tossApp)
@@ -19,10 +21,10 @@ struct TossSectionOne: View {
             
             
             VStack(alignment: .leading){
-                Text("토스")
+                Text(viewModel.title)
                     .font(.system(size: 26, weight: .semibold))
                 
-                Text("금융이 쉬워진다")
+                Text(viewModel.subTitle)
                     .font(.system(size: 16))
                     .foregroundStyle(.gray)
                 
@@ -54,6 +56,7 @@ struct TossSectionOne: View {
         }
     }
 }
+
 #Preview {
-    TossSectionOne()
+    TossView()
 }

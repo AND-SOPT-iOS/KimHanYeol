@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TossSectionTwo: View {
+    @ObservedObject var viewModel: TossViewModel
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
             HStack{
@@ -79,5 +81,5 @@ struct TossSectionTwo: View {
 }
 
 #Preview {
-    TossSectionTwo()
+    TossView()
 }

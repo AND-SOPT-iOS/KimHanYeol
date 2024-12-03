@@ -18,6 +18,13 @@
 		6C4A3CE62CFCCBC300D60C9A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6C4A3CE52CFCCBC300D60C9A /* RxCocoa */; };
 		6C4A3CE82CFCCBC300D60C9A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6C4A3CE72CFCCBC300D60C9A /* RxSwift */; };
 		6CB52F442CD5F10A00C8D130 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6CB52F432CD5F10A00C8D130 /* Alamofire */; };
+		6CE269DB2CFF26E7006AD00E /* TossSectionFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D12CFF26E7006AD00E /* TossSectionFive.swift */; };
+		6CE269DC2CFF26E7006AD00E /* TossSectionFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D22CFF26E7006AD00E /* TossSectionFour.swift */; };
+		6CE269DD2CFF26E7006AD00E /* TossSectionOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D32CFF26E7006AD00E /* TossSectionOne.swift */; };
+		6CE269DE2CFF26E7006AD00E /* TossSectionThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D42CFF26E7006AD00E /* TossSectionThree.swift */; };
+		6CE269DF2CFF26E7006AD00E /* TossSectionTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D52CFF26E7006AD00E /* TossSectionTwo.swift */; };
+		6CE269E02CFF26E7006AD00E /* TossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D62CFF26E7006AD00E /* TossView.swift */; };
+		6CE269E12CFF26E7006AD00E /* TossViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE269D82CFF26E7006AD00E /* TossViewModel.swift */; };
 		6CE9F75E2CFE385700F53D73 /* FinancialFirstSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F7582CFE385700F53D73 /* FinancialFirstSection.swift */; };
 		6CE9F75F2CFE385700F53D73 /* FinancialFourthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F7592CFE385700F53D73 /* FinancialFourthSection.swift */; };
 		6CE9F7602CFE385700F53D73 /* FinancialSecondSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9F75A2CFE385700F53D73 /* FinancialSecondSection.swift */; };
@@ -36,6 +43,13 @@
 		6C4A3C9E2CFC9F1200D60C9A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6C4A3CA02CFC9F1200D60C9A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		6CB52F472CD5F28E00C8D130 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		6CE269D12CFF26E7006AD00E /* TossSectionFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossSectionFive.swift; sourceTree = "<group>"; };
+		6CE269D22CFF26E7006AD00E /* TossSectionFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossSectionFour.swift; sourceTree = "<group>"; };
+		6CE269D32CFF26E7006AD00E /* TossSectionOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossSectionOne.swift; sourceTree = "<group>"; };
+		6CE269D42CFF26E7006AD00E /* TossSectionThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossSectionThree.swift; sourceTree = "<group>"; };
+		6CE269D52CFF26E7006AD00E /* TossSectionTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossSectionTwo.swift; sourceTree = "<group>"; };
+		6CE269D62CFF26E7006AD00E /* TossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossView.swift; sourceTree = "<group>"; };
+		6CE269D82CFF26E7006AD00E /* TossViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossViewModel.swift; sourceTree = "<group>"; };
 		6CE9F7582CFE385700F53D73 /* FinancialFirstSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialFirstSection.swift; sourceTree = "<group>"; };
 		6CE9F7592CFE385700F53D73 /* FinancialFourthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialFourthSection.swift; sourceTree = "<group>"; };
 		6CE9F75A2CFE385700F53D73 /* FinancialSecondSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialSecondSection.swift; sourceTree = "<group>"; };
@@ -83,7 +97,6 @@
 		6C4A3CB52CFCA01600D60C9A /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		6C4A3CB62CFCA01600D60C9A /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
 		6C4A3CD12CFCABB400D60C9A /* Reusable */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Reusable; sourceTree = "<group>"; };
-		6CBCD4362CFDF0A0003BE01E /* Toss */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Toss; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +215,7 @@
 		6C4A3CA52CFC9F1200D60C9A /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				6CBCD4362CFDF0A0003BE01E /* Toss */,
+				6CE269DA2CFF26E7006AD00E /* Toss */,
 				6C4A3CD12CFCABB400D60C9A /* Reusable */,
 				6C4A3CA22CFC9F1200D60C9A /* Main */,
 				6C4A3CA42CFC9F1200D60C9A /* TodayTab */,
@@ -230,6 +243,36 @@
 				6CB52F472CD5F28E00C8D130 /* Config.xcconfig */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		6CE269D72CFF26E7006AD00E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CE269D62CFF26E7006AD00E /* TossView.swift */,
+				6CE269D32CFF26E7006AD00E /* TossSectionOne.swift */,
+				6CE269D52CFF26E7006AD00E /* TossSectionTwo.swift */,
+				6CE269D42CFF26E7006AD00E /* TossSectionThree.swift */,
+				6CE269D22CFF26E7006AD00E /* TossSectionFour.swift */,
+				6CE269D12CFF26E7006AD00E /* TossSectionFive.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6CE269D92CFF26E7006AD00E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6CE269D82CFF26E7006AD00E /* TossViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6CE269DA2CFF26E7006AD00E /* Toss */ = {
+			isa = PBXGroup;
+			children = (
+				6CE269D72CFF26E7006AD00E /* View */,
+				6CE269D92CFF26E7006AD00E /* ViewModel */,
+			);
+			path = Toss;
 			sourceTree = "<group>";
 		};
 		6CE9F75D2CFE385700F53D73 /* View */ = {
@@ -303,7 +346,6 @@
 				6C4A3CB52CFCA01600D60C9A /* ViewModel */,
 				6C4A3CB62CFCA01600D60C9A /* View */,
 				6C4A3CD12CFCABB400D60C9A /* Reusable */,
-				6CBCD4362CFDF0A0003BE01E /* Toss */,
 			);
 			name = "35-Seminar";
 			packageProductDependencies = (
@@ -373,6 +415,13 @@
 			files = (
 				6CFA97D02CB1017F004B6A40 /* AppDelegate.swift in Sources */,
 				6CE9F7642CFE3D8400F53D73 /* PopularView.swift in Sources */,
+				6CE269DB2CFF26E7006AD00E /* TossSectionFive.swift in Sources */,
+				6CE269DC2CFF26E7006AD00E /* TossSectionFour.swift in Sources */,
+				6CE269DD2CFF26E7006AD00E /* TossSectionOne.swift in Sources */,
+				6CE269DE2CFF26E7006AD00E /* TossSectionThree.swift in Sources */,
+				6CE269DF2CFF26E7006AD00E /* TossSectionTwo.swift in Sources */,
+				6CE269E02CFF26E7006AD00E /* TossView.swift in Sources */,
+				6CE269E12CFF26E7006AD00E /* TossViewModel.swift in Sources */,
 				6C4A3CA72CFC9F1200D60C9A /* AppCategory.swift in Sources */,
 				6C4A3CA82CFC9F1200D60C9A /* DownloadState.swift in Sources */,
 				6C4A3CA92CFC9F1200D60C9A /* App.swift in Sources */,

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TossSectionFive: View {
+    @ObservedObject var viewModel: TossViewModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
             HStack(alignment: .center){
@@ -20,7 +22,7 @@ struct TossSectionFive: View {
             }
             
             HStack{
-                Text("4.4")
+                Text(viewModel.averageScore)
                     .font(.system(size: 68, weight: .bold))
                 
                 Spacer()
@@ -38,7 +40,7 @@ struct TossSectionFive: View {
                             .scaledToFit()
                             .frame(width: 23)
                     }
-                    Text("8.4만개의 평가")
+                    Text(viewModel.numberOfEvaluate)
                         .font(.system(size: 18, weight: .bold))
                         .foregroundStyle(.gray)
                 }
@@ -52,7 +54,7 @@ struct TossSectionFive: View {
             TabView{
                 ForEach(0..<5) { index in
                     VStack(alignment: .leading, spacing: 5){
-                        Text(TossReview.TossReviewMockData[index].customerReviewViewTitle)
+                        Text(viewModel.review[index].customerReviewViewTitle)
                         
                         HStack(spacing: 5){
                             ForEach(0..<5) { _ in
@@ -62,7 +64,7 @@ struct TossSectionFive: View {
                                     .frame(width: 13)
                             }
                             
-                            Text(TossReview.TossReviewMockData[index].customerReviewViewDateLabel)
+                            Text(viewModel.review[index].customerReviewViewDateLabel)
                                 .font(.system(size: 16))
                                 .padding(.leading, 5)
                                 .foregroundStyle(.gray)
@@ -70,26 +72,26 @@ struct TossSectionFive: View {
                             Text("-")
                                 .foregroundStyle(.gray)
                                 .font(.system(size: 16))
-                            Text(TossReview.TossReviewMockData[index].customerNameLabel)
+                            Text(viewModel.review[index].customerNameLabel)
                                 .foregroundStyle(.gray)
                                 .font(.system(size: 16))
                         }
                         
-                        Text(TossReview.TossReviewMockData[index].customerReviewLabel)
+                        Text(viewModel.review[index].customerReviewLabel)
                             .font(.system(size: 16))
                             .foregroundStyle(.gray)
                             .lineLimit(2)
                             .padding(.bottom, 10)
                         
                         HStack(spacing: 10){
-                            Text(TossReview.TossReviewMockData[index].developerReviewViewTitle)
+                            Text(viewModel.review[index].developerReviewViewTitle)
                                 .font(.system(size: 16))
-                            Text(TossReview.TossReviewMockData[index].developerReviewViewDateLabel)
+                            Text(viewModel.review[index].developerReviewViewDateLabel)
                                 .font(.system(size: 16))
                                 .foregroundStyle(.gray)
                         }
                         
-                        Text(TossReview.TossReviewMockData[index].developerReviewLabel)
+                        Text(viewModel.review[index].developerReviewLabel)
                             .font(.system(size: 16))
                             .foregroundStyle(.gray)
                             .lineLimit(2)
@@ -113,5 +115,5 @@ struct TossSectionFive: View {
 }
 
 #Preview {
-    TossSectionFive()
+    TossView()
 }

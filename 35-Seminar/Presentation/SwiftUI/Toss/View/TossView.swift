@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct TossView: View {
+    @StateObject var viewModel = TossViewModel()
+    
     var body: some View {
         ScrollView(showsIndicators: false){
-            TossSectionOne().padding(.bottom, 20)
+            TossSectionOne(viewModel: viewModel)
+                .padding(.bottom, 20)
+            
             Divider()
-            TossSectionTwo().padding(.bottom, 20)
-            TossSectionThree()
-            Divider().padding(.bottom, 20)
-            TossSectionFour()
-            TossSectionFive()
+            
+            TossSectionTwo(viewModel: viewModel)
+                .padding(.bottom, 20)
+            TossSectionThree(viewModel: viewModel)
+            
+            Divider()
+                .padding(.bottom, 20)
+            
+            TossSectionFour(viewModel: viewModel)
+            TossSectionFive(viewModel: viewModel)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
